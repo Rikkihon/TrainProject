@@ -33,6 +33,7 @@
       <div class="jumbotron" style="background-color: black; color: white">
         <h1 class="text-center">Anytime is Train Time</h1>
         <h3 class="text-center">Choo Choo. Chee Chee.</h3>
+        <img src="tayo" class="img-rounded" alt="Tayo The Magic Bus">
       </div>
 
       <div class="row">
@@ -53,7 +54,6 @@
                     <th>Frequency (min)</th>
                     <th>Next Arrival</th>
                     <th>Minutes Away</th>
-                    <th>Null</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -82,10 +82,18 @@
                 <div class="form-group">
                   <label for="start-input">First Train Time (HH:mm - military Time)</label>
                   <input class="form-control" id="start-input" type="text">
+                  <div class="alert alert-warning alert-dismissible fade in">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Enter Only Numbers</strong> Enter numerical Times in HH:MM only, please.
+                    </div>
                 </div>
                 <div class="form-group">
                   <label for="rate-input">Frequency</label>
                   <input class="form-control" id="rate-input" type="text">
+                  <div class="alert alert-warning alert-dismissible fade in">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Enter Only Numbers</strong> Enter the number of minutes between each train. Example: 60 minutes.
+                    </div>
                 </div>
                 <button class="add-train-btn" id="add-train-btn" type="submit">Submit</button>
               </form>
