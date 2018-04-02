@@ -14,13 +14,20 @@
  // Grabs user input
  var trainName = $("#employee-name-input").val().trim();
  var destination = $("#role-input").val().trim();
- var firstTime = "hh:mm";
  var firstTimeConverted = moment(firstTime, "hh:mm");
  var frequency = $("#rate-input").val().trim();
  var currentTime = moment();
  var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+ var firstTime = $("#start-input").val().trim();   
+ var dateFormat = "HH:mm";
+ var convertedDate = moment(firstTime, dateFormat);
+ console.log("The converted time is: "+ convertedDate);
+
+
+
+
  moment().fromNow();
- console.log(trainName)
+  
 
 // Creates local "temporary" object for holding employee data
 var newTrain= {
@@ -28,6 +35,7 @@ var newTrain= {
  destination: destination,
  //ft: firstTimeConverted,
  frequency: frequency,
+ //convertedDate: convertedDate,
  //time: currentTime,
  //minutesAway: diffTime
 };
@@ -36,9 +44,12 @@ var newTrain= {
     event.preventDefault();
     var trainName = $("#employee-name-input").val().trim();
     var destination = $("#role-input").val().trim();
-    var firstTime = "hh:mm";
-    var firstTimeConverted = moment(firstTime).format("hh:mm");
     var frequency = $("#rate-input").val().trim();
+    var firstTime = $("#start-input").val().trim();
+        
+
+    //var firstTimeConverted = moment(firstTime).format("hh:mm");
+
     var currentTime = moment();
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     var minutes = moment(firstTimeConverted).format("mm");
@@ -81,7 +92,7 @@ var newTrain= {
 
     database.ref().push(newTrain);
     $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination+ "</td><td>" +
-    frequency + "</td><td>" + tMinutesTillTrain + "</td><td>" + "Any other variable here" + "</td><td>" + "null" + "</td></tr>");
+    frequency + "</td><td>" + tMinutesTillTrain + "</td><td>" +  "ConvertedDate" + "</td><td>" + "null" + "</td></tr>");
 
     // Alert
     alert("Train successfully added");
