@@ -127,12 +127,15 @@ alert("Enter a number in 'Frequency'-field!");
   $("#role-input").val("");
   $("#start-input").val("");
   $("#rate-input").val("");
-  
+
 //this should delete or edit the table if the user wants to click the edit or submit buttons
+//this doesn't work yet
 $("#train-table").on("click", ".btn.btn-primary.btn-sm",  function (event){
     event.preventDefault();
     console.log("Does this work?")
- 
+    $("#train-table").html("<tr><td>" + "</td><td>" + "</td><td>" +
+     "</td><td>"  + "</td><td>" + "</td>" );
+  
 
   });
 });
