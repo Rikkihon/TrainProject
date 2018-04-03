@@ -127,12 +127,12 @@ alert("Enter a number in 'Frequency'-field!");
   $("#role-input").val("");
   $("#start-input").val("");
   $("#rate-input").val("");
-//this should delete or edit the table if the user wants to edit it. 
-  $("#button").on("click", function (event) {
+  
+//this should delete or edit the table if the user wants to click the edit or submit buttons
+$("#train-table").on("click", ".btn.btn-primary.btn-sm",  function (event){
     event.preventDefault();
-
-    $("#train-table").append("<tr><td></td>")
- //then we could write the "Delete" and "Edit" buttons in 
+    console.log("Does this work?")
+ 
 
   });
 });
