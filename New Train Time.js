@@ -50,7 +50,7 @@ $("#add-train-btn").on("click", function (event) {
   //added some data inputs that are a bit sloppy, TBH
 
   if(isNaN(frequency)){
-alert("Not a number in 'Frequency'-field!");
+alert("Enter a number in 'Frequency'-field!");
   }
   var firstTime = $("#start-input").val().trim();
   if(isNaN(firstTime)){
@@ -116,8 +116,9 @@ alert("Not a number in 'Frequency'-field!");
 
   database.ref("/trains").push(newTrain);
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
-    frequency + "</td><td>" + timeNextTrain + "</td><td>" + tMinutesTillTrain + "</td>" + "<td><button>Delete</button></td>" + "<td><button>Edit</button></td></tr>");
-
+    frequency + "</td><td>" + timeNextTrain + "</td><td>" + tMinutesTillTrain + "</td>" + "<td><button class= 'btn btn-primary btn-sm'>Delete</button></td>" + "<td><button class= 'btn btn-primary btn-sm'>Edit</button></td></tr>");
+    var button = $("<button>");
+    button.addClass("btn btn-primary btn-sm");
   // Alert
   alert("Train successfully added");
 
@@ -126,9 +127,14 @@ alert("Not a number in 'Frequency'-field!");
   $("#role-input").val("");
   $("#start-input").val("");
   $("#rate-input").val("");
+//this should delete or edit the table if the user wants to edit it. 
+  $("#button").on("click", function (event) {
+    event.preventDefault();
 
+    $("#train-table").append("<tr><td></td>")
  //then we could write the "Delete" and "Edit" buttons in 
 
+  });
 });
 
   
